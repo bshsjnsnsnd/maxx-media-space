@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAXX MEDIA SPACE</title>
+    <title>Media Space</title>
     
     <!-- Anti-Bot & Anti-AI Crawler Meta Tags -->
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
@@ -23,8 +23,8 @@
         body {
             background-color: #ffffff;
             color: #000000;
-            padding: 20px;
-            max-width: 650px;
+            padding: 15px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -58,9 +58,6 @@
             font-weight: bold;
             color: #1a1a1a;
             margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .cf-widget {
@@ -85,11 +82,7 @@
             height: 22px;
             border: 2px solid #999999;
             border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: #ffffff;
-            transition: all 0.2s ease;
         }
 
         .cf-spinner {
@@ -123,37 +116,142 @@
         .cf-brand span {
             font-weight: bold;
             font-size: 12px;
-            color: #f38020; /* Cloudflare Orange Accent */
+            color: #f38020;
         }
 
-        /* --- MAIN SITE CONTENT CONTAINER --- */
+        /* --- MAIN SITE CONTENT --- */
         .site-container {
-            display: none; /* Hidden until verified */
+            display: none;
         }
 
-        /* Header Title */
-        header {
-            padding: 10px 0 20px 0;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 20px;
-        }
-
-        .brand-name {
-            font-size: 24px;
+        /* Welcome Message */
+        .welcome-message {
+            font-size: 17px;
             font-weight: bold;
             color: #000000;
-            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.5;
+            white-space: pre-line;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        /* Image Carousel Slider Container */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000000;
+            margin-bottom: 20px;
+            border: 1px solid #111111;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .slide-caption {
+            padding: 12px 15px;
+            font-size: 16px;
+            color: #000000;
+            background-color: #ffffff;
+            border-top: 1px solid #eeeeee;
+            font-weight: normal;
+            text-align: left;
+            white-space: pre-line;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        /* Navigation Arrows (⬅️ / ➡️) */
+        .slider-controls {
+            position: absolute;
+            top: 40%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .nav-btn {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            user-select: none;
+        }
+
+        .nav-btn:active {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Side-by-Side Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 16px 0;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-align: center;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        /* Left Button: Black See Demo Video's */
+        .demo-btn {
+            background-color: #000000;
+            color: #ffffff;
+            border: 2px solid #000000;
+        }
+
+        /* Right Button: Blue Buy Now */
+        .buy-btn {
+            background-color: #0088cc;
+            color: #ffffff;
+            border: 2px solid #0088cc;
         }
     </style>
 </head>
 <body>
 
-    <!-- Cloudflare-Style Human Verification -->
+    <!-- Cloudflare Verification Screen -->
     <div class="cf-overlay" id="cfOverlay">
         <div class="cf-box">
-            <div class="cf-title">
-                Verify you are human
-            </div>
+            <div class="cf-title">Verify you are human</div>
             <div class="cf-widget" onclick="startVerification()">
                 <div class="cf-left">
                     <div class="cf-checkbox" id="cfCheck"></div>
@@ -168,19 +266,55 @@
         </div>
     </div>
 
-    <!-- Main Website Content (Khali Rakhha Hai Abhi) -->
+    <!-- Main Website Content -->
     <div class="site-container" id="siteContent">
-        <!-- Site Header Name -->
-        <header>
-            <h1 class="brand-name">MAXX MEDIA SPACE</h1>
-        </header>
+        
+        <!-- Welcome Message Placeholder -->
+        <div class="welcome-message">
+(....... welcome massage...... )
+        </div>
 
-        <!-- Yahan aage ka video, caption aur buttons step by step add karenge -->
-        <main>
-            <p style="color: #666666; font-size: 14px;">Welcome to Maxx Media Space. Next components will be added here...</p>
-        </main>
+        <!-- Photos Section Slider -->
+        <div class="slider-container">
+            
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="img1.jpg" alt="Photo 1">
+                <div class="slide-caption">( ....img1capt.... )</div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="img2.jpg" alt="Photo 2">
+                <div class="slide-caption">( ....img2capt.... )</div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="img3.jpg" alt="Photo 3">
+                <div class="slide-caption">( ....img3capt.... )</div>
+            </div>
+
+            <!-- Left / Right Navigation Buttons Overlay -->
+            <div class="slider-controls">
+                <button class="nav-btn" onclick="prevSlide()">⬅️</button>
+                <button class="nav-btn" onclick="nextSlide()">➡️</button>
+            </div>
+
+        </div>
+
+        <!-- Side-by-Side Action Buttons -->
+        <div class="action-buttons">
+            <!-- Left Black Button -->
+            <a href="(.........link......)" class="btn-action demo-btn">See Demo Video's</a>
+
+            <!-- Right Blue Button -->
+            <a href="(.........link......)" class="btn-action buy-btn">Buy Now</a>
+        </div>
+
     </div>
 
+    <!-- Scripts -->
     <script>
         // AI & Bot Detection
         function isBot() {
@@ -189,7 +323,7 @@
             return navigator.webdriver || botPattern.test(userAgent);
         }
 
-        // Cloudflare Click Handler
+        // Cloudflare Verification Trigger
         function startVerification() {
             if (isBot()) {
                 window.location.href = "https://www.google.com";
@@ -202,11 +336,33 @@
             check.style.display = 'none';
             spinner.style.display = 'block';
 
-            // 1.2 Second Simulate Cloudflare Verification
             setTimeout(function() {
                 document.getElementById('cfOverlay').style.display = 'none';
                 document.getElementById('siteContent').style.display = 'block';
             }, 1200);
+        }
+
+        // Image Slider Functions
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
         }
 
         // Context Menu Disable
