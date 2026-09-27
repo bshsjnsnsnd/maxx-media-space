@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAXX MEDIA SPACE</title>
+    
+    <!-- Anti-Bot & Anti-AI Crawler Meta Tags -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="googlebot" content="noindex, nofollow">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 20px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* --- CLOUDFLARE STYLE VERIFICATION OVERLAY --- */
+        .cf-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            padding: 20px;
+        }
+
+        .cf-box {
+            border: 1px solid #dcdcdc;
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 360px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .cf-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cf-widget {
+            border: 1px solid #d3d3d3;
+            background-color: #ffffff;
+            border-radius: 4px;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .cf-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cf-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #999999;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .cf-spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #0051c3;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            display: none;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cf-text {
+            font-size: 14px;
+            color: #222222;
+        }
+
+        .cf-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 10px;
+            color: #666666;
+        }
+
+        .cf-brand span {
+            font-weight: bold;
+            font-size: 12px;
+            color: #f38020; /* Cloudflare Orange Accent */
+        }
+
+        /* --- MAIN SITE CONTENT CONTAINER --- */
+        .site-container {
+            display: none; /* Hidden until verified */
+        }
+
+        /* Header Title */
+        header {
+            padding: 10px 0 20px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cloudflare-Style Human Verification -->
+    <div class="cf-overlay" id="cfOverlay">
+        <div class="cf-box">
+            <div class="cf-title">
+                Verify you are human
+            </div>
+            <div class="cf-widget" onclick="startVerification()">
+                <div class="cf-left">
+                    <div class="cf-checkbox" id="cfCheck"></div>
+                    <div class="cf-spinner" id="cfSpinner"></div>
+                    <span class="cf-text">Verify you are human</span>
+                </div>
+                <div class="cf-brand">
+                    <span>cloudflare</span>
+                    <small>Privacy • Terms</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Website Content (Khali Rakhha Hai Abhi) -->
+    <div class="site-container" id="siteContent">
+        <!-- Site Header Name -->
+        <header>
+            <h1 class="brand-name">MAXX MEDIA SPACE</h1>
+        </header>
+
+        <!-- Yahan aage ka video, caption aur buttons step by step add karenge -->
+        <main>
+            <p style="color: #666666; font-size: 14px;">Welcome to Maxx Media Space. Next components will be added here...</p>
+        </main>
+    </div>
+
+    <script>
+        // AI & Bot Detection
+        function isBot() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const botPattern = /bot|googlebot|crawler|spider|robot|crawling|headlesschrome|puppeteer|selenium|phantom/i;
+            return navigator.webdriver || botPattern.test(userAgent);
+        }
+
+        // Cloudflare Click Handler
+        function startVerification() {
+            if (isBot()) {
+                window.location.href = "https://www.google.com";
+                return;
+            }
+
+            var check = document.getElementById('cfCheck');
+            var spinner = document.getElementById('cfSpinner');
+
+            check.style.display = 'none';
+            spinner.style.display = 'block';
+
+            // 1.2 Second Simulate Cloudflare Verification
+            setTimeout(function() {
+                document.getElementById('cfOverlay').style.display = 'none';
+                document.getElementById('siteContent').style.display = 'block';
+            }, 1200);
+        }
+
+        // Context Menu Disable
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
