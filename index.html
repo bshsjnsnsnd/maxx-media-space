@@ -28,9 +28,9 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
+            -webkit-touch-callout: none !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
         }
 
         body {
@@ -146,8 +146,8 @@
             text-align: center;
             line-height: 1.5;
             white-space: pre-line;
-            -webkit-user-select: text;
-            user-select: text;
+            -webkit-user-select: text !important;
+            user-select: text !important;
         }
 
         /* Video Container */
@@ -158,6 +158,7 @@
             background-color: #000000;
             margin-bottom: 20px;
             border: 1px solid #111111;
+            position: relative;
         }
 
         .video-container video {
@@ -177,8 +178,8 @@
             font-weight: normal;
             text-align: left;
             white-space: pre-line;
-            -webkit-user-select: text;
-            user-select: text;
+            -webkit-user-select: text !important;
+            user-select: text !important;
         }
 
         /* Side-by-Side Action Buttons */
@@ -241,23 +242,24 @@
         
         <!-- Welcome Message Placeholder -->
         <div class="welcome-message">
-( Real C-corn D-web Teligram Group Available  )
+C-CORN D-web Teligram Group Available, Fully Satisfied Vedeo's Collection 🔥💦 
         </div>
 
-        <!-- Video Section -->
+        <!-- Video Section with No-Download Controls -->
         <div class="video-container">
-            <video controls playsinline preload="metadata">
+            <video controls controlsList="nodownload noremoteplayback" disablePictureInPicture playsinline preload="metadata" oncontextmenu="return false;">
                 <source src="vedeo1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="video-caption">
-( 1200+ VEDEOS UPLOAD IN C-CORN [ Teligram Group 🔥]
+1200+ VEDEOS UPLOAD IN C-CORN [ Teligram Group 🔥]
 
 All Vedeo's Upload In Heigh Quility 
 
-if you have any trust issue - join first the group 
+if you have any trust issue -you can join first ✓ 
+One time purches - Life time Join ✓
 
-Group Price Only 99₹ )
+Group Price Only 99₹ 👇
             </div>
         </div>
 
@@ -300,9 +302,19 @@ Group Price Only 99₹ )
             }, 1200);
         }
 
-        // Context Menu Disable
+        // Protection: Disable Context Menu, Dragging, Shortcuts
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
+        });
+
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 123 || (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 67))) {
+                e.preventDefault();
+            }
         });
     </script>
 
