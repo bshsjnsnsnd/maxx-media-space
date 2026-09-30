@@ -150,9 +150,8 @@
             user-select: text;
         }
 
-        /* Image Carousel Slider Container */
-        .slider-container {
-            position: relative;
+        /* Video Container */
+        .video-container {
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
@@ -161,25 +160,15 @@
             border: 1px solid #111111;
         }
 
-        .slide {
-            display: none;
-            width: 100%;
-            text-align: center;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        .slide img {
+        .video-container video {
             width: 100%;
             height: auto;
             max-height: 480px;
-            object-fit: contain;
             display: block;
+            outline: none;
         }
 
-        .slide-caption {
+        .video-caption {
             padding: 12px 15px;
             font-size: 16px;
             color: #000000;
@@ -190,38 +179,6 @@
             white-space: pre-line;
             -webkit-user-select: text;
             user-select: text;
-        }
-
-        /* Navigation Arrows (⬅️ / ➡️) */
-        .slider-controls {
-            position: absolute;
-            top: 40%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-
-        .nav-btn {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #ffffff;
-            border: none;
-            border-radius: 50%;
-            width: 42px;
-            height: 42px;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: auto;
-            user-select: none;
-        }
-
-        .nav-btn:active {
-            background-color: rgba(0, 0, 0, 0.9);
         }
 
         /* Side-by-Side Action Buttons */
@@ -284,51 +241,24 @@
         
         <!-- Welcome Message Placeholder -->
         <div class="welcome-message">
-(Real c-corn D-web leaked videos [ Telegram Group ] Avilable )
+( Real C-corn D-web Teligram Group Available  )
         </div>
 
-        <!-- Photos Section Slider -->
-        <div class="slider-container">
-            
-            <!-- Slide 1 -->
-            <div class="slide active">
-                <img src="img1.jpg" alt="Photo 1">
-                <div class="slide-caption">(Thousands Vedeo's Collection 🔥 Teligram Group 
+        <!-- Video Section -->
+        <div class="video-container">
+            <video controls playsinline preload="metadata">
+                <source src="vedeo1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-caption">
+( 1200+ VEDEOS UPLOAD IN C-CORN [ Teligram Group 🔥]
 
-One Time Purchase - Life. Time access ✓ 
+All Vedeo's Upload In Heigh Quility 
 
-[ Limited time offer -Price only 99₹)</div>
+if you have any trust issue - join first the group 
+
+Group Price Only 99₹ )
             </div>
-
-            <!-- Slide 2 -->
-            <div class="slide">
-                <img src="img2.jpg" alt="Photo 2">
-                <div class="slide-caption">( Thousands Vedeo's Collection 🔥 Teligram Group 
-
-One Time Purchase - Life. Time access ✓ 
-
-[ Limited time offer -Price only 99₹ )</div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="slide">
-                <img src="img3.jpg" alt="Photo 3">
-                <div class="slide-caption">(Thousands Vedeo's Collection 🔥 Teligram Group 
-
-One Time Purchase - Life. Time access ✓ 
-
-
-If you have a trust issue, I can add you to the first group
-
-[ Limited time offer -Price only 99₹)</div>
-            </div>
-
-            <!-- Left / Right Navigation Buttons Overlay -->
-            <div class="slider-controls">
-                <button class="nav-btn" onclick="prevSlide()">⬅️</button>
-                <button class="nav-btn" onclick="nextSlide()">➡️</button>
-            </div>
-
         </div>
 
         <!-- Side-by-Side Action Buttons -->
@@ -337,7 +267,7 @@ If you have a trust issue, I can add you to the first group
             <a href="https://t.me/Only_For_Demo_robot" class="btn-action demo-btn">See Demo Video's</a>
 
             <!-- Right Blue Button (With Pre-Filled Message) -->
-            <a href="https://t.me/Mms_baba1?text=I%20Am%20Ready%20To%20Byu%20Your%20C-Corn%20Group%20In%2099%E2%82%B9%0APlease%20Send%20Me%20QR%20And%20More%20Details" class="btn-action buy-btn">Buy Now</a>
+            <a href="https://t.me/Mms_baba1?text=I%20Am%20Ready%20To%20Byu%20You%20C-Corn%20Group%20In%2099%E2%82%B9%0APlease%20Send%20Me%20QR%20And%20More%20Details" class="btn-action buy-btn">Buy Now</a>
         </div>
 
     </div>
@@ -368,29 +298,6 @@ If you have a trust issue, I can add you to the first group
                 document.getElementById('cfOverlay').style.display = 'none';
                 document.getElementById('siteContent').style.display = 'block';
             }, 1200);
-        }
-
-        // Image Slider Functions
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
         }
 
         // Context Menu Disable
